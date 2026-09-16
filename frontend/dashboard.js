@@ -485,6 +485,60 @@ function calcularXP(){
 
 }
 
+// ==========================
+// ATUALIZAR PREVISÃO DE XP
+// ==========================
+
+
+function atualizarPreviewXP(){
+
+
+    const xpElemento =
+    document.getElementById("xpTreino");
+
+
+
+    if(xpElemento){
+
+
+        const xp =
+        calcularXP();
+
+
+
+        xpElemento.innerHTML =
+        `+${xp} XP`;
+
+    }
+
+
+}
+const tipoTreino =
+document.getElementById("tipoTreino");
+
+
+const dificuldade =
+document.getElementById("dificuldade");
+
+
+
+if(tipoTreino && dificuldade){
+
+
+    tipoTreino.addEventListener(
+        "change",
+        atualizarPreviewXP
+    );
+
+
+    dificuldade.addEventListener(
+        "change",
+        atualizarPreviewXP
+    );
+
+
+}
+
 
 
 

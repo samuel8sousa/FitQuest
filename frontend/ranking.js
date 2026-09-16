@@ -2,32 +2,14 @@
 // RANKING FITQUEST
 // ==========================
 
-const nomeUsuario =
-document.getElementById("nomeUsuario");
 
-
-if(nomeUsuario){
-
-    const aluno =
-    alunos[matriculaAtual];
-
-
-    nomeUsuario.innerHTML =
-    `${aluno.nome} `;
-
-}
-
-// Buscar alunos
+// Buscar alunos salvos
 
 const alunos =
 
 JSON.parse(
-
-localStorage.getItem("alunos")
-
+    localStorage.getItem("alunos")
 ) || {};
-
-
 
 
 
@@ -38,19 +20,43 @@ localStorage.getItem("matricula");
 
 
 
+// ==========================
+// USUÁRIO HEADER
+// ==========================
 
-// Transformar objeto em lista
+
+const nomeUsuario =
+document.getElementById("nomeUsuario");
+
+
+if(nomeUsuario && alunos[matriculaAtual]){
+
+
+    nomeUsuario.innerHTML =
+
+    `${alunos[matriculaAtual].nome}`;
+
+
+}
+
+
+
+
+
+// ==========================
+// CRIAR RANKING
+// ==========================
+
 
 let ranking =
+
 
 Object.keys(alunos).map((matricula)=>{
 
 
     return {
 
-
         matricula: matricula,
-
 
         nome:
         alunos[matricula].nome,
@@ -58,7 +64,6 @@ Object.keys(alunos).map((matricula)=>{
 
         xp:
         alunos[matricula].xp || 0
-
 
     };
 
@@ -69,13 +74,12 @@ Object.keys(alunos).map((matricula)=>{
 
 
 
-// Ordenar por XP
+// Ordenar maior XP primeiro
+
 
 ranking.sort((a,b)=>{
 
-
     return b.xp - a.xp;
-
 
 });
 
@@ -92,45 +96,46 @@ ranking.sort((a,b)=>{
 
 const podium =
 
-document.getElementById(
-"podium"
-);
+document.getElementById("podium");
 
 
 
 if(podium){
 
 
-let top3 = ranking.slice(0,3);
+    podium.innerHTML = "";
+
+
+    const top3 = ranking.slice(0,3);
 
 
 
-let ordem = [
+    const ordem = [
 
-top3[1],
+        top3[1],
 
-top3[0],
+        top3[0],
 
-top3[2]
+        top3[2]
 
-];
-
-
-
-let medalhas = [
-
-"🥈",
-
-"🥇",
-
-"🥉"
-
-];
+    ];
 
 
 
+    const medalhas = [
 
-ordem.forEach((aluno,index)=>{
+        "🥈",
+
+        "🥇",
+
+        "🥉"
+
+    ];
+
+
+
+
+    ordem.forEach((aluno,index)=>{
 
 
     if(!aluno) return;
@@ -139,7 +144,12 @@ ordem.forEach((aluno,index)=>{
 
     podium.innerHTML += `
 
-    <div class="position">
+    <div class="position ${
+        index === 0 ? "second" :
+        index === 1 ? "first" :
+        "third"
+    }">
+
 
         <span>
             ${medalhas[index]}
@@ -161,10 +171,13 @@ ordem.forEach((aluno,index)=>{
     `;
 
 
-});
+
+    });
 
 
 }
+
+
 
 
 
@@ -184,68 +197,117 @@ document.getElementById(
 
 
 
-
-
 if(lista){
 
 
-ranking.forEach((aluno,index)=>{
-
-
-    const usuarioAtual =
-
-    aluno.matricula === matriculaAtual;
+    lista.innerHTML = "";
 
 
 
-
-    lista.innerHTML += `
-
-
-    <div class="player ${usuarioAtual ? "current" : ""}">
+    ranking.forEach((aluno,index)=>{
 
 
-        <span>
-            ${index + 1}º
-        </span>
+        const usuarioAtual =
+
+        aluno.matricula === matriculaAtual;
 
 
 
-        <div>
+        lista.innerHTML += `
 
-            <strong>
+
+        <div class="
+        player 
+        ${usuarioAtual ? "current" : ""}
+        ">
+
+
+            <span>
+
+            ${index+1}º
+
+            </span>
+
+
+
+            <div>
+
+
+                <strong>
+
                 ${aluno.nome}
-            </strong>
+
+                </strong>
 
 
-            ${
-            usuarioAtual
-            ?
-            "<small>Você</small>"
-            :
-            ""
-            }
+
+                ${
+                usuarioAtual
+                ?
+                "<small>Você</small>"
+                :
+                ""
+                }
+
+
+            </div>
+
+
+
+
+            <b>
+
+            ${aluno.xp} XP
+
+            </b>
+
 
 
         </div>
 
 
-
-        <b>
-
-            ${aluno.xp} XP
-
-        </b>
+        `;
 
 
 
-    </div>
+    });
 
 
-    `;
+
+}
 
 
-});
+
+
+
+
+
+// ==========================
+// VOLTAR DASHBOARD
+// ==========================
+
+
+const voltar =
+
+document.getElementById(
+"voltarDashboard"
+);
+
+
+
+if(voltar){
+
+
+    voltar.addEventListener(
+    "click",
+    ()=>{
+
+
+        window.location.href =
+        "dashboard.html";
+
+
+    });
 
 
 }

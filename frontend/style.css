@@ -2,6 +2,7 @@
    CONFIGURAÇÕES GERAIS
 ========================= */
 
+
 :root {
 
     --primary: #22c55e;
@@ -18,6 +19,7 @@
     --card-bg: #ffffff;
 
 }
+
 
 
 * {
@@ -58,18 +60,16 @@ body {
 
 
 
+
+
 /* =========================
    HEADER
 ========================= */
 
 
-.header {
+.header{
 
     height:70px;
-
-    background:var(--dark);
-
-    color:white;
 
     display:flex;
 
@@ -78,6 +78,10 @@ body {
     justify-content:space-between;
 
     padding:0 50px;
+
+    background:#111827;
+
+    color:white;
 
 }
 
@@ -92,6 +96,7 @@ body {
 }
 
 
+
 .logo span {
 
     color:var(--primary);
@@ -99,8 +104,8 @@ body {
 }
 
 
-.user,
-.profile {
+
+.user {
 
     font-size:16px;
 
@@ -108,26 +113,83 @@ body {
 
 
 
+.header-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+
+
+
+/* BOTÃO VOLTAR */
+
+.btn-back{
+
+    padding:10px 22px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#22c55e;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.btn-back:hover{
+
+    background:#16a34a;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+
+
+
 
 /* =========================
-   COMPONENTES GERAIS
+   COMPONENTE CARD
 ========================= */
 
 
 .card {
 
-    background:var(--card-bg);
+    background:white;
 
     border-radius:22px;
 
     padding:25px;
 
     box-shadow:
-    0 8px 25px rgba(0,0,0,0.08);
+
+    0 8px 25px rgba(0,0,0,.08);
 
     margin-bottom:20px;
 
 }
+
+
+
 
 
 
@@ -162,7 +224,8 @@ body {
     border-radius:25px;
 
     box-shadow:
-    0 10px 30px rgba(0,0,0,0.10);
+
+    0 10px 30px rgba(0,0,0,.10);
 
     text-align:center;
 
@@ -216,7 +279,9 @@ body {
 
     font-weight:bold;
 
-    margin:15px 0 8px;
+    margin:
+
+    15px 0 8px;
 
 }
 
@@ -228,7 +293,9 @@ body {
 
     border-radius:12px;
 
-    border:1px solid #d1d5db;
+    border:
+
+    1px solid #d1d5db;
 
     font-size:16px;
 
@@ -269,23 +336,19 @@ body {
 }
 
 
+
 .login-card button:hover {
 
     background:var(--primary-dark);
 
 }
 
-
-
-
-
 /* =========================
    DASHBOARD
 ========================= */
 
 
-.dashboard,
-.container {
+.dashboard {
 
     width:900px;
 
@@ -305,6 +368,24 @@ body {
 
 
 
+.level-card {
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:25px;
+
+    box-shadow:
+
+    0 8px 25px rgba(0,0,0,.08);
+
+    margin-bottom:20px;
+
+}
+
+
+
 .level-header {
 
     display:flex;
@@ -312,6 +393,24 @@ body {
     justify-content:space-between;
 
     align-items:center;
+
+}
+
+
+
+.level-header h2 {
+
+    font-size:28px;
+
+}
+
+
+
+.level-header p {
+
+    color:var(--gray);
+
+    margin-top:5px;
 
 }
 
@@ -330,8 +429,9 @@ body {
 
 
 
+
 /* =========================
-   BARRA XP
+   BARRA DE XP
 ========================= */
 
 
@@ -353,41 +453,33 @@ body {
 
 
 
-.progress-bar,
 .progress-value {
 
     height:100%;
 
+    width:0%;
+
     background:
+
     linear-gradient(
+
         90deg,
-        var(--primary),
-        var(--primary-dark)
+
+        #22c55e,
+
+        #16a34a
+
     );
 
     border-radius:20px;
 
-}
-
-
-.progress-bar {
-
-    width:60%;
-
-}
-
-
-.progress-value {
-
-    width:65%;
+    transition:.5s;
 
 }
 
 
 
 .next {
-
-    display:block;
 
     margin-top:12px;
 
@@ -397,21 +489,99 @@ body {
 
 
 
+
+
+
 /* =========================
-   CHECK-IN
+   CHECK-IN DASHBOARD
 ========================= */
 
 
-.actions {
+.checkin-card {
 
-    margin:25px 0;
+    text-align:center;
 
 }
 
 
 
-.checkin,
-.checkin-card button,
+.checkin-card h2 {
+
+    margin-bottom:10px;
+
+}
+
+
+
+.checkin-card p {
+
+    color:var(--gray);
+
+    margin-bottom:20px;
+
+}
+
+
+
+.checkin-card label {
+
+    display:block;
+
+    text-align:left;
+
+    font-weight:bold;
+
+    margin-top:15px;
+
+}
+
+
+
+.checkin-card select {
+
+    width:100%;
+
+    padding:15px;
+
+    margin-top:8px;
+
+    border-radius:12px;
+
+    border:
+
+    1px solid #d1d5db;
+
+    font-size:16px;
+
+}
+
+
+
+.reward-preview {
+
+    margin:25px 0;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    background:#ecfdf5;
+
+}
+
+
+
+.reward-preview strong {
+
+    color:var(--primary-dark);
+
+    font-size:24px;
+
+}
+
+
+
+
 .confirm-checkin {
 
 
@@ -433,89 +603,123 @@ body {
 
     cursor:pointer;
 
+    transition:.3s;
+
 }
 
 
 
-.checkin:hover,
-.checkin-card button:hover,
 .confirm-checkin:hover {
 
     background:var(--primary-dark);
 
-}
-
-
-
-.checkin-card {
-
-    text-align:center;
+    transform:translateY(-2px);
 
 }
 
 
-
-.checkin-card select {
-
-    width:100%;
-
-    padding:15px;
-
-    margin:10px 0 20px;
-
-    border-radius:12px;
-
-    border:1px solid #d1d5db;
-
-    font-size:16px;
-
-}
-
-
-
-.checkin-card label {
-
-    font-weight:bold;
-
-}
-
-
-
-.reward-preview {
-
-    background:#ecfdf5;
-
-    padding:15px;
-
-    border-radius:15px;
-
-    margin:20px 0;
-
-}
-
-
-
-.reward-preview strong {
-
-    color:var(--primary-dark);
-
-    font-size:22px;
-
-}
 
 
 
 
 /* =========================
-   INFORMAÇÕES
+   AÇÕES RÁPIDAS
+========================= */
+
+
+.quick-actions {
+
+
+    display:flex;
+
+    gap:20px;
+
+    margin-top:30px;
+
+}
+
+
+
+.action-btn {
+
+
+    flex:1;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:15px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.evolution-btn {
+
+
+    background:#22c55e;
+
+    color:white;
+
+}
+
+
+
+.evolution-btn:hover {
+
+
+    background:#16a34a;
+
+}
+
+
+
+.ranking-btn {
+
+
+    background:#111827;
+
+    color:white;
+
+}
+
+
+
+.ranking-btn:hover {
+
+
+    background:#1f2937;
+
+}
+
+
+
+
+
+
+
+/* =========================
+   ESTATÍSTICAS
 ========================= */
 
 
 .information {
 
+
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:
+
+    repeat(3,1fr);
 
     gap:20px;
 
@@ -524,6 +728,7 @@ body {
 
 
 .info {
+
 
     display:flex;
 
@@ -536,6 +741,7 @@ body {
 
 
 .info .icon {
+
 
     width:60px;
 
@@ -559,11 +765,10 @@ body {
 
 .info h3 {
 
+
     font-size:28px;
 
     color:var(--primary-dark);
-
-    margin-bottom:5px;
 
 }
 
@@ -571,9 +776,10 @@ body {
 
 .info p {
 
+
     font-weight:bold;
 
-    margin-bottom:5px;
+    margin:5px 0;
 
 }
 
@@ -581,11 +787,13 @@ body {
 
 .info span {
 
+
     color:var(--gray);
 
     font-size:13px;
 
 }
+
 
 
 
@@ -598,6 +806,7 @@ body {
 
 .achievement-header h2 {
 
+
     margin-bottom:20px;
 
 }
@@ -605,6 +814,7 @@ body {
 
 
 .achievement-box {
+
 
     display:flex;
 
@@ -618,23 +828,20 @@ body {
 
     border-radius:18px;
 
-    font-size:20px;
-
-    color:#166534;
-
 }
 
 
 
 .achievement-icon {
 
+
     width:60px;
 
     height:60px;
 
-    border-radius:50%;
-
     background:white;
+
+    border-radius:50%;
 
     display:flex;
 
@@ -650,15 +857,17 @@ body {
 
 .achievement-info h3 {
 
-    font-size:22px;
 
-    margin-bottom:8px;
+    color:#166534;
+
+    font-size:22px;
 
 }
 
 
 
 .achievement-info p {
+
 
     color:var(--gray);
 
@@ -668,6 +877,7 @@ body {
 
 .achievement-progress {
 
+
     margin-top:25px;
 
 }
@@ -675,6 +885,7 @@ body {
 
 
 .progress-text {
+
 
     display:flex;
 
@@ -686,23 +897,8 @@ body {
 
 
 
-.progress-text span {
-
-    color:var(--gray);
-
-}
-
-
-
-.progress-text strong {
-
-    color:var(--primary-dark);
-
-}
-
-
-
 .achievement-bar {
+
 
     height:14px;
 
@@ -718,11 +914,12 @@ body {
 
 .achievement-value {
 
-    width:60%;
 
     height:100%;
 
-    background:var(--primary);
+    width:0%;
+
+    background:#22c55e;
 
 }
 
@@ -730,7 +927,8 @@ body {
 
 .reward {
 
-    margin:20px 0;
+
+    margin-top:20px;
 
     padding:15px;
 
@@ -742,16 +940,13 @@ body {
 
 }
 
-
-
-
-
 /* =========================
-   CHECK-IN TELA
+   TELA DE CHECK-IN
 ========================= */
 
 
 .checkin-page {
+
 
     min-height:calc(100vh - 70px);
 
@@ -767,6 +962,7 @@ body {
 
 .checkin-box {
 
+
     width:450px;
 
     text-align:center;
@@ -777,11 +973,16 @@ body {
 
 .icon {
 
+
     width:80px;
 
     height:80px;
 
     margin:auto;
+
+    border-radius:50%;
+
+    background:#ecfdf5;
 
     display:flex;
 
@@ -789,29 +990,29 @@ body {
 
     justify-content:center;
 
-    border-radius:50%;
-
-    background:#ecfdf5;
-
     font-size:40px;
 
 }
 
 
 
+
+
 .training-info {
 
-    margin:30px 0;
 
     display:flex;
 
     justify-content:space-around;
+
+    margin:30px 0;
 
 }
 
 
 
 .training-info div {
+
 
     display:flex;
 
@@ -825,6 +1026,7 @@ body {
 
 .training-info span {
 
+
     color:var(--gray);
 
 }
@@ -832,9 +1034,14 @@ body {
 
 
 
+
+
 .warning {
 
+
     margin-top:20px;
+
+    color:var(--gray);
 
     font-size:14px;
 
@@ -844,12 +1051,15 @@ body {
 
 
 
+
+
 /* =========================
-   EVOLUÇÃO XP
+   EVOLUÇÃO
 ========================= */
 
 
 .evolution-page {
+
 
     min-height:calc(100vh - 70px);
 
@@ -865,6 +1075,7 @@ body {
 
 .evolution-card {
 
+
     width:480px;
 
     text-align:center;
@@ -875,23 +1086,24 @@ body {
 
 .success-icon {
 
+
     width:90px;
 
     height:90px;
 
     margin:auto;
 
+    border-radius:50%;
+
+    background:#22c55e;
+
+    color:white;
+
     display:flex;
 
     justify-content:center;
 
     align-items:center;
-
-    border-radius:50%;
-
-    background:var(--primary);
-
-    color:white;
 
     font-size:45px;
 
@@ -900,6 +1112,7 @@ body {
 
 
 .xp-earned {
+
 
     margin:30px 0;
 
@@ -913,25 +1126,42 @@ body {
 
 
 
-.xp-earned strong {
+.xp-earned span {
+
 
     display:block;
 
-    font-size:35px;
-
-    color:var(--primary-dark);
+    color:var(--gray);
 
 }
 
 
 
+.xp-earned strong {
+
+
+    display:block;
+
+    margin-top:10px;
+
+    color:#16a34a;
+
+    font-size:35px;
+
+}
+
+
+
+
+
 .level-update {
+
 
     display:flex;
 
-    align-items:center;
-
     justify-content:center;
+
+    align-items:center;
 
     gap:25px;
 
@@ -939,11 +1169,12 @@ body {
 
 
 
-.level-box {
+.level {
+
 
     background:#f9fafb;
 
-    padding:20px 30px;
+    padding:20px 35px;
 
     border-radius:18px;
 
@@ -951,13 +1182,115 @@ body {
 
 
 
-.level-box h2 {
+.level p {
+
+
+    color:var(--gray);
+
+}
+
+
+
+.level h2 {
+
 
     font-size:40px;
 
-    color:var(--primary-dark);
+    color:#16a34a;
 
 }
+
+
+
+.arrow {
+
+
+    font-size:35px;
+
+}
+
+
+
+.evolution-progress {
+
+
+    width:100%;
+
+    height:18px;
+
+    background:#e5e7eb;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-top:30px;
+
+}
+
+
+
+.evolution-progress .progress-value {
+
+
+    height:100%;
+
+    width:0%;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        #22c55e,
+
+        #16a34a
+
+    );
+
+    transition:.8s;
+
+}
+
+
+
+.evolution-card button {
+
+
+    margin-top:25px;
+
+    width:80%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#22c55e;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+
+.evolution-card button:hover {
+
+
+    background:#16a34a;
+
+}
+
+
+
 
 
 
@@ -969,13 +1302,12 @@ body {
 
 .ranking-page {
 
+
     min-height:calc(100vh - 70px);
 
     display:flex;
 
     justify-content:center;
-
-    padding-top:40px;
 
 }
 
@@ -983,23 +1315,31 @@ body {
 
 .ranking-card {
 
+
     width:900px;
+
+    margin:40px auto;
 
 }
 
 
 
+
+/* PÓDIO */
+
+
 .podium {
+
 
     display:flex;
 
     justify-content:center;
 
-    align-items:end;
+    align-items:flex-end;
 
-    gap:20px;
+    gap:25px;
 
-    margin:40px 0;
+    margin:60px 0 40px;
 
 }
 
@@ -1007,15 +1347,30 @@ body {
 
 .position {
 
-    width:160px;
 
-    padding:20px;
+    width:170px;
+
+    min-height:190px;
+
+    padding:25px 20px;
 
     border-radius:20px;
 
+    background:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
     text-align:center;
 
-    background:#f9fafb;
+    box-shadow:
+
+    0 8px 20px rgba(0,0,0,.08);
 
 }
 
@@ -1023,39 +1378,96 @@ body {
 
 .position span {
 
-    font-size:40px;
+
+    font-size:45px;
 
 }
 
 
 
-.first {
+.position strong {
 
-    transform:translateY(-20px);
+
+    margin-top:15px;
+
+    font-size:18px;
+
+    word-break:break-word;
+
+}
+
+
+
+.position p {
+
+
+    margin-top:10px;
+
+    font-weight:bold;
+
+    color:#16a34a;
+
+}
+
+
+
+
+/* PRIMEIRO */
+
+
+.position.first {
+
+
+    width:200px;
+
+    min-height:240px;
 
     background:#fef3c7;
 
+    transform:translateY(-35px);
+
 }
 
 
 
-.second {
+
+/* SEGUNDO */
+
+
+.position.second {
+
 
     background:#f3f4f6;
 
+    min-height:210px;
+
 }
 
 
 
-.third {
+
+/* TERCEIRO */
+
+
+.position.third {
+
 
     background:#fed7aa;
 
+    min-height:190px;
+
 }
 
 
 
+
+
+
+/* LISTA RANKING */
+
+
 .ranking-list {
+
 
     display:flex;
 
@@ -1069,17 +1481,51 @@ body {
 
 .player {
 
+
     display:flex;
 
     align-items:center;
 
     justify-content:space-between;
 
-    padding:18px;
+    padding:20px;
 
-    border-radius:15px;
+    border-radius:18px;
 
     background:#f9fafb;
+
+}
+
+
+
+.player span {
+
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    width:50px;
+
+}
+
+
+
+.player div {
+
+
+    flex:1;
+
+    text-align:center;
+
+}
+
+
+
+.player strong {
+
+
+    font-size:18px;
 
 }
 
@@ -1087,9 +1533,10 @@ body {
 
 .player small {
 
+
     display:block;
 
-    color:var(--primary-dark);
+    color:#16a34a;
 
 }
 
@@ -1097,183 +1544,17 @@ body {
 
 .player b {
 
-    color:var(--primary-dark);
-
-}
-
-
-
-.current {
-
-    border:2px solid var(--primary);
-
-    background:#ecfdf5;
-
-}
-
-/* BARRA DE EVOLUÇÃO */
-
-.evolution-progress{
-
-    width:100%;
-
-    height:18px;
-
-    background:#e5e7eb;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    margin-top:25px;
-
-}
-
-
-.evolution-progress .progress-value{
-
-    height:100%;
-
-    width:0%;
-
-    background:linear-gradient(
-        90deg,
-        #22c55e,
-        #16a34a
-    );
-
-    border-radius:20px;
-
-    transition:
-    width .8s ease;
-
-}
-
-.btn-primary{
-
-    margin-top:25px;
-
-    width:80%;
-
-    padding:16px;
-
-    border:none;
-
-    border-radius:15px;
-
-    background:#22c55e;
-
-    color:white;
-
-    font-size:18px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-
-
-.btn-primary:hover{
-
-    background:#16a34a;
-
-    transform:translateY(-2px);
-
-}
-
-.podium{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:flex-end;
-
-    gap:20px;
-
-    margin:40px 0;
-
-}
-
-
-
-.position{
-
-    background:white;
-
-    padding:25px;
-
-    border-radius:20px;
-
-    text-align:center;
-
-    min-width:150px;
-
-    box-shadow:
-    0 8px 20px rgba(0,0,0,.08);
-
-}
-
-
-
-.position span{
-
-    font-size:40px;
-
-}
-
-
-
-.position strong{
-
-    display:block;
-
-    margin-top:10px;
-
-    font-size:20px;
-
-}
-
-
-
-.position p{
 
     color:#16a34a;
 
-    font-weight:bold;
-
 }
 
 
 
 
 
+.player.current {
 
-.player{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    padding:18px;
-
-    margin-bottom:12px;
-
-    border-radius:15px;
-
-    background:#f9fafb;
-
-}
-
-
-
-.player.current{
 
     background:#dcfce7;
 
@@ -1283,35 +1564,26 @@ body {
 
 
 
-.player span{
-
-    font-weight:bold;
-
-    font-size:20px;
-
-}
 
 
 
-.player small{
 
-    display:block;
+/* =========================
+   BOTÃO RANKING DASHBOARD
+========================= */
 
-    color:#16a34a;
 
-}
+.ranking-access {
 
-.ranking-access{
 
     text-align:center;
 
-    margin-top:20px;
-
 }
 
 
 
-.ranking-access button{
+.ranking-access button {
+
 
     margin-top:20px;
 
@@ -1327,8 +1599,6 @@ body {
 
     color:white;
 
-    font-size:18px;
-
     font-weight:bold;
 
     cursor:pointer;
@@ -1337,80 +1607,107 @@ body {
 
 
 
-.ranking-access button:hover{
+.ranking-access button:hover {
+
 
     background:#22c55e;
 
 }
 
-.quick-actions{
 
-    display:flex;
 
-    gap:20px;
 
-    margin-top:30px;
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+
+@media(max-width:950px){
+
+
+    .dashboard,
+    .ranking-card {
+
+
+        width:90%;
+
+    }
+
+
+
+    .information {
+
+
+        grid-template-columns:1fr;
+
+    }
+
+
 
 }
 
 
 
-.action-btn{
-
-    flex:1;
-
-    padding:16px;
-
-    border:none;
-
-    border-radius:15px;
-
-    font-size:16px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
+@media(max-width:600px){
 
 
 
-.evolution-btn{
-
-    background:#22c55e;
-
-    color:white;
-
-}
+    .header {
 
 
+        padding:0 20px;
 
-.evolution-btn:hover{
-
-    background:#16a34a;
-
-    transform:translateY(-2px);
-
-}
+    }
 
 
 
-.ranking-btn{
-
-    background:#111827;
-
-    color:white;
-
-}
+    .logo {
 
 
+        font-size:22px;
 
-.ranking-btn:hover{
+    }
 
-    background:#1f2937;
 
-    transform:translateY(-2px);
+
+    .quick-actions {
+
+
+        flex-direction:column;
+
+    }
+
+
+
+    .podium {
+
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+
+
+    .position.first {
+
+
+        transform:none;
+
+    }
+
+
+
+    .level-update {
+
+
+        flex-direction:column;
+
+    }
+
+
 
 }
