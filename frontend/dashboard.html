@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FitQuest - Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <div class="logo">
+        Fit<span>Quest</span>
+    </div>
+
+
+    <div class="user" id="nomeUsuario">
+
+    </div>
+
+</header>
+
+
+
+<main class="dashboard">
+
+
+
+
+<section class="welcome card">
+
+    <h1 id="saudacao">
+
+    </h1>
+
+    <p>
+        Continue treinando para evoluir seu nível.
+    </p>
+
+
+    <div class="quick-actions">
+
+
+        <button 
+        id="btnEvolucao"
+        class="action-btn evolution-btn">
+
+            🚀 Ver minha evolução
+
+        </button>
+
+
+
+        <button 
+        id="btnRanking"
+        class="action-btn ranking-btn">
+
+            🏆 Ranking
+
+        </button>
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+
+<section class="level-card">
+
+
+<div class="level-header">
+
+    <div>
+
+        <h2 id="nivel">
+            Nível 1
+        </h2>
+
+        <p id="tituloNivel">
+            Iniciante
+        </p>
+
+    </div>
+
+
+    <div class="xp" id="xpAtual">
+
+        0 XP
+
+    </div>
+
+
+</div>
+
+
+
+<div class="progress">
+
+    <div class="progress-value"></div>
+
+</div>
+
+
+<p class="next" id="proximoNivel">
+
+</p>
+
+
+</section>
+
+
+
+
+
+<section class="checkin-card card">
+
+
+<div class="icon">
+
+    💪
+
+</div>
+
+
+<h2>
+    Hora do treino!
+</h2>
+
+
+<p>
+    Escolha seu treino e receba experiência pela evolução.
+</p>
+
+
+
+<label>
+    Tipo de treino
+</label>
+
+
+<select id="tipoTreino">
+
+    <option value="superior">
+        Superior (+100 XP)
+    </option>
+
+
+    <option value="perna">
+        Perna (+150 XP)
+    </option>
+
+
+    <option value="cardio">
+        Cardio (+80 XP)
+    </option>
+
+
+    <option value="fullbody">
+        Full Body (+200 XP)
+    </option>
+
+
+</select>
+
+
+
+
+<label>
+    Dificuldade
+</label>
+
+
+<select id="dificuldade">
+
+
+    <option value="facil">
+        Fácil (+0 XP)
+    </option>
+
+
+    <option value="medio">
+        Médio (+50 XP)
+    </option>
+
+
+    <option value="dificil">
+        Difícil (+100 XP)
+    </option>
+
+
+</select>
+
+
+
+
+<div class="reward-preview">
+
+    XP recebido:
+
+    <strong id="xpTreino">
+        +100 XP
+    </strong>
+
+
+</div>
+
+
+
+
+<button id="btnCheckin">
+
+    ✓ Confirmar treino
+
+</button>
+
+
+
+
+<p class="warning">
+
+    Você pode realizar apenas um treino por dia.
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+<section class="information">
+
+
+<div class="card info">
+
+
+<div class="icon">
+    🔥
+</div>
+
+
+<div>
+
+<h3 id="treinos">
+    0
+</h3>
+
+<p>
+Treinos realizados
+</p>
+
+
+<span>
+Sequência atual: 3 dias
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card info">
+
+
+<div class="icon">
+    ⭐
+</div>
+
+
+<div>
+
+<h3 id="xpCard">
+    0 XP
+</h3>
+
+<p>
+Experiência
+</p>
+
+
+<span>
+Continue evoluindo
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card info">
+
+
+<div class="icon">
+    🏅
+</div>
+
+
+<div>
+
+<h3 id="conquistas">
+    0
+</h3>
+
+
+<span>
+Próxima: Foco Semanal
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+<section class="card achievement">
+
+
+<div class="achievement-header">
+
+    <h2>
+        🏆 Próxima conquista
+    </h2>
+
+</div>
+
+
+
+
+<div class="achievement-box">
+
+
+<div class="achievement-icon">
+
+    🔥
+
+</div>
+
+
+
+<div class="achievement-info">
+
+
+<h3>
+    Foco Semanal
+</h3>
+
+
+<p>
+    Complete 5 treinos na semana.
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="achievement-progress">
+
+
+<div class="progress-text">
+
+    <span>
+        Progresso
+    </span>
+
+    <strong id="progressoConquista">
+    
+    </strong>
+
+</div>
+
+
+
+<div class="achievement-bar">
+
+    <div class="achievement-value"></div>
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="reward">
+
+    🎁 Recompensa:
+    <strong>
+        Medalha Foco Semanal
+    </strong>
+
+</div>
+
+
+
+</section>
+<section class="ranking-access card">
+
+
+<h2>
+    🏆 Competição
+</h2>
+
+
+<p>
+    Veja sua posição entre os alunos da academia.
+</p>
+
+
+
+</main>
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>
