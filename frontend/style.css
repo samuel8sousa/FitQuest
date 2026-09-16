@@ -163,7 +163,49 @@ body {
 
 
 
+.header-actions{
 
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+
+.btn-logout{
+
+    padding:10px 20px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#ef4444;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.btn-logout:hover{
+
+    background:#dc2626;
+
+    transform:translateY(-2px);
+
+}
 
 
 

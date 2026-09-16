@@ -736,7 +736,49 @@ document.getElementById("btnRanking")
 
 
 
+// ==========================
+// LOGOUT
+// ==========================
 
+
+const btnLogout =
+document.getElementById("btnLogout");
+
+
+
+if(btnLogout){
+
+
+    btnLogout.addEventListener(
+    "click",
+    ()=>{
+
+
+        const confirmar =
+        confirm(
+        "Deseja sair da conta?"
+        );
+
+
+        if(confirmar){
+
+
+            localStorage.removeItem("matricula");
+
+            localStorage.removeItem("aluno");
+
+
+            window.location.href =
+            "index.html";
+
+
+        }
+
+
+    });
+
+
+}
 
 
 // ==========================
